@@ -1,0 +1,16 @@
+patient_id,activity,event_time
+P001,Registration,09:00
+P001,Doctor,09:30
+P001,Discharge,11:00
+P002,Registration,09:15
+P002,Doctor,10:00
+P002,Discharge,11:30
+P003,Registration,08:30
+P003,Doctor,09:15
+P003,Discharge,10:30
+P004,Registration,10:00
+P004,Doctor,10:20
+P004,Discharge,11:45
+P005,Registration,11:00
+P005,Doctor,11:50
+P005,Discharge,13:00
