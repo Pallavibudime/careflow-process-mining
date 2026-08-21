@@ -1,32 +1,37 @@
-# patients = [
-#     ["P001", "Registration", "09:00"],
-#     ["P001", "Doctor", "09:30"],
-#     ["P001", "Discharge", "11:00"],
-#     ["P002", "Registration", "09:15"],
-#     ["P002", "Doctor", "10:00"],
-#     ["P002", "Discharge", "11:30"]
-# ]
-
-# print("CareFlow Patient Journey")
-# print("------------------------")
-
-# for patient in patients:
-#     print(
-#         "Patient:", patient[0],
-#         "| Activity:", patient[1],
-#         "| Time:", patient[2]
-#     )
-
 import csv
+from datetime import datetime
+
+patients = {}
 
 with open("patients.csv", "r") as file:
     data = csv.DictReader(file)
 
     for row in data:
-        print(
-            row["patient_id"],
-            "|",
-            row["activity"],
-            "|",
-            row["event_time"]
-        )
+        patient_id = row["patient_id"]
+        activity = row["activity"]
+        event_time = row["event_time"]
+
+        if patient_id not in patients:
+            patients[patient_id] = {}
+
+        patients[patient_id][activity] = event_time
+
+
+print("CareFlow Waiting Time Analysis")
+print("--------------------------------")
+
+for patient_id, activities in patients.items():
+
+    registration = datetime.strptime(
+        activities["Registration"], "%H:%M"
+    )
+
+    doctor = datetime.strptime(
+        activities["Doctor"], "%H:%M"
+    )
+
+    waiting_time = doctor - registration
+
+    minutes = waiting_time.seconds // 60
+
+    print(patient_id, "| Waiting Time:", minutes, "minutes")
