@@ -1,0 +1,11 @@
+Case_ID,From_Activity,To_Activity,Transition_Minutes
+P001,Registration,Doctor,30
+P001,Doctor,Discharge,90
+P002,Registration,Doctor,45
+P002,Doctor,Discharge,90
+P003,Registration,Doctor,45
+P003,Doctor,Discharge,75
+P004,Registration,Doctor,20
+P004,Doctor,Discharge,85
+P005,Registration,Doctor,50
+P005,Doctor,Discharge,70
