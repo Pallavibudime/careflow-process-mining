@@ -1,4 +1,4 @@
-Case_ID,Activity,Timestamp
+Get-ChildItem *.pbixCase_ID,Activity,Timestamp
 P001,Registration,2026-08-20 09:00:00
 P001,Doctor,2026-08-20 09:30:00
 P001,Discharge,2026-08-20 11:00:00
